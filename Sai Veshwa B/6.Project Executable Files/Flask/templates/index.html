@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Wild Blueberry Yield</title>
+    <style>
+        body {
+            background-image: url("D:/Flask/templates/blueberry.jpg"); /* Background image */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the image */
+            font-family: Tahoma, sans-serif;
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: white; /* Changed text color to white */
+        }
+
+        .form-container {
+            background-color: rgba(37, 37, 99, 0.5); /* Semi-transparent grey background for the form container */
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            overflow-y: auto;
+            max-height: calc(100vh - 150px); /* Slightly reduced height */
+            color: white; /* Changed text color to white */
+            margin-left: 50px; /* Move form 50px to the left */
+        }
+        
+        .form-container h1 {
+            text-align: center;
+            color: white; /* Heading color */
+            font-size: 3rem; /* Increased font size */
+            margin-bottom: 20px; /* Added some bottom margin */
+        }
+        
+        .form-container label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: white; /* Label text color */
+        }
+        
+        .form-container input[type="text"], 
+        .form-container input[type="date"],
+        .form-container input[type="submit"] {
+            width: calc(100% - 24px);
+            height: 60px; /* Reduced input height */
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 4px solid white;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-size: 1.2rem; /* Increased font size */
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.5); /* Darkened background color */
+            color: white; /* Text color */
+        }
+        
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 1.3rem; /* Increased font size */
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            padding: 14px 24px; /* Increased padding */
+        }
+        
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>BERRY_PREDICTOR.IO</h1>
+        <form action="/predict" method="post">
+            <label for="clonesize">Clonesize:</label>
+            <input type="text" id="clonesize" name="clonesize"><br>
+            <label for="honeybee">Honeybee:</label>
+            <input type="text" id="honeybee" name="honeybee"><br>
+            <label for="andrena">Andrena:</label>
+            <input type="text" id="andrena" name="andrena"><br>
+            <label for="osmia">Osmia:</label>
+            <input type="text" id="osmia" name="osmia"><br>
+            <label for="MinOfUpperTRange">Min Of Upper T Range:</label>
+            <input type="text" id="MinOfUpperTRange" name="MinOfUpperTRange"><br>
+            <label for="AverageOfUpperTRange">Average Of Upper T Range:</label>
+            <input type="text" id="AverageOfUpperTRange" name="AverageOfUpperTRange"><br>
+            <label for="AverageOfLowerTRange">Average Of Lower T Range:</label>
+            <input type="text" id="AverageOfLowerTRange" name="AverageOfLowerTRange"><br>
+            <label for="RainingDays">Raining Days:</label>
+            <input type="text" id="RainingDays" name="RainingDays"><br>
+            <label for="seeds">Seeds:</label>
+            <input type="text" id="seeds" name="seeds"><br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
